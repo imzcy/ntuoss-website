@@ -36,7 +36,7 @@ function LoadObject($module, $params = NULL, $isclass = FALSE) {
     
     require_once($path);
     
-    if ($isclass) {
+    if ($isclass == TRUE) {
         // Load classes from file.
         // Must create return an object
         return new $name($params);
