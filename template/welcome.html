@@ -1,137 +1,321 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+
 <title><?php echo $title;?></title>
+<link rel="stylesheet" href="/static/css/zcy/dropdown.css" />
 <style>
-body {
-    font-family: Arial;
-}
 
-div.zcy-dropdown {
-    position: relative;
-    display: inline-block;
-    height: 26px;
-    margin: 8px;
-    line-height: 0;
-    outline: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-}
 
-div.zcy-dropdown>button {
-    position: relative;
-	display: inline-block;
-	border: 1px solid #ccc;
-	background-color: #eee;
-	text-align: center;
-	min-width: 54px;
-	border-radius: 2px;
-	padding: 0px;
-    margin: 0px;
-	line-height: 0;
-	cursor: default !important;
-    z-index: 0;
-}
-
-div.zcy-dropdown>button>span {
-    display: inline-block;
-    height: 24px;
-    min-width: 24px;
-    background-image: url('/static/image/settings.png');
-    background-repeat: no-repeat;
-    padding: 0px;
-    margin: 0px;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-div.zcy-dropdown>button:hover {
-	border: 1px solid #ccc;
-	background-color: #fefefe;
-	box-shadow: 1px 1px 0.5px #ccc;
-}
-
-div.zcy-dropdown>button:active {
-	border: 1px solid #ccc;
-	background-color: #fefefe;
-    box-shadow: inset 1px 1px 1px #ccc;
-}
-
-div.zcy-dropdown>ul {
-    display: none;
-    position: absolute;
-	background-color: #fefefe;
-	border: 1px solid #eee;
-	box-shadow: 1px 2px 2px #ccc;
-    z-index: 3;
-	padding: 0px;
-	margin-top: 0px;
-}
-
-div.zcy-dropdown>ul>li {
-	display: block;
-    line-height: 1.2;
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer !important;
-    color: #555;
-    white-space: nowrap;
-    padding-left: 32px;
-}
-
-div.zcy-dropdown>ul>li:hover{
-	display: block;
-	background-color: #eee;
-}
-
-div.zcy-dropdown>ul>li:active {
-    color: #000;
-}
-
-div.zcy-dropdown>ul>li a {
-    text-decoration: none;
-}
 
 </style>
 <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.core.min.js"></script>
 <script language="javascript" type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="/static/js/jquery-ui-1.10.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="/static/js/jquery.animate-shadow-min.js"></script>
+<script language="javascript" type="text/javascript" src="/static/js/shortcut.js"></script>
+<script language="javascript" type="text/javascript" src="/static/js/jquery.hashchange.min.js"></script>
+
+<script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
+<script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.customize.js"></script>
 <script>
-
 $(document).ready(function() {
-    zcy.add('controls.dropdown.render', function(element) {
-        element.attr('tabindex', 0);
-        element.focusout(function(e) {
-            $(this).find('ul').css('display', 'none');
-            console.log('blur');
-            e.stopPropagation();
-        });
-        element.find('button').bind('click', function(e) {
-            $(this).parent().find('ul').css('display', 'block');
-            console.log('click');
-            e.stopPropagation();
-        });
-    });
+    zcy.customize('events', function(onoff) {
+        console.log('events ' + onoff);
+    }, $('.zcy-customize-events'), 'Ctrl+1');
     
-    $.each($('div.zcy-dropdown'), function() {
-        zcy.controls.dropdown.render($(this));
-    });
+    zcy.customize('projects', function(onoff) {
+        console.log('projects ' + onoff);
+    }, $('.zcy-customize-projects'), 'Ctrl+2');
 });
-
 </script>
+
+<style>
+
+.zcy-gallery {
+    line-height: 0;
+    position: relative;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    box-shadow: inset 1px 1px 4px #ccc;
+    height: 176px;
+    white-space: nowrap;
+    padding: 0px;
+    margin: 8px;
+    cursor: move !important;
+    
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.gallery-item {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 160px; height: 160px;
+    background-color: #eee;
+    box-shadow: 2px 2px 4px #ccc;
+    border: #ccc;
+    margin: 8px;
+    padding: 0px;
+    line-height: 0;
+}
+
+div.mouse {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    background-color: #123456;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+</style>
 </head>
 <body>
 
 <div class="zcy-dropdown">
     <button>
-    <span></span>
+    <span>Customize</span>
     </button>
     <ul>
-        <li onmousedown="alert('1');">Item 1</li>
-        <li onmousedown="alert('1');">Item 2</li>
-        <li onmousedown="alert('1');">Item 3 - What's this?</li>
-        <li onmousedown="alert('1');">Item 4</li>
+        <li class="zcy-customize-events">Events list</li>
+        <li class="zcy-customize-projects">Projects list</li>
     </ul>
 </div>
+<br />
+
+
+<div class="gallery-item-template"></div>
+
+<div class="zcy-gallery" unselectable="on">
+    <div class="gallery-item"></div>
+    <div class="mouse"></div>
+</div>
+
+<div class="width"></div>
+<div class="itemwidth"></div>
+<div class="expecteditems"></div>
+<div class="currentitems"></div>
+<div class="eventname"></div>
+<div class="eventspeed"></div>
+
+<script>
+
+</script>
+
+<script>
+
+$(document).ready(function() {
+    zcy.add('gallery.mouseevent', function(event) {
+        var $eventTarget = $(event.target);
+        if ($eventTarget.hasClass('zcy-gallery')) {
+            if (event.offsetX) {
+                return {position: [event.offsetX, event.offsetY], target: $eventTarget};
+            } else {
+                var targetOffset = $eventTarget.offset()
+                return {position: [event.pageX - targetOffset.left, event.pageY - targetOffset.top], target: $eventTarget};
+            }
+        }
+        $eventTarget = $eventTarget.closest('div.zcy-gallery')
+        targetOffset = $eventTarget.offset();
+        return {position: [event.pageX - targetOffset.left - 2, event.pageY - targetOffset.top - 2], target: $eventTarget};
+    });
+    zcy.add('gallery.zoom', function(iScale) {
+        // To workaround android chrome touch event bug
+        // Although I am also not sure whether it is a bug or not
+        var sViewport = '<meta name="viewport" content="width=device-width, initial-scale=' + iScale + '">';
+        var jViewport = $('meta[name="viewport"]');
+        if (jViewport.length > 0) {
+            jViewport.replaceWith(sViewport);
+        } else {
+            $('head').append(sViewport);
+        }
+    });
+    // Prepare updated canvas size for animation
+    
+    // Most basic events
+    zcy.add('gallery.mousedown', function(event) {
+        event.preventDefault();
+        var mouseevent = zcy.gallery.mouseevent(event);
+        var offset = mouseevent.position;
+        var target = mouseevent.target;
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Mouse Down: ' + offset[0] + ', ' + offset[1]);
+        
+        // If mousedown detected, stop all animation
+        zcy.gallery.events.stop.call(target);
+        // If record this action
+        target.data('mousedown', true);
+        target.data('lastpos', {time: (new Date()).getTime(), position: [offset[0], offset[1]]});
+        target.data('mousemove', false);
+    });
+    zcy.add('gallery.mouseup', function(event) {
+        event.preventDefault();
+        var mouseevent = zcy.gallery.mouseevent(event);
+        var offset = mouseevent.position;
+        var target = mouseevent.target;
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Mouse Up: ' + offset[0] + ', ' + offset[1]);
+        
+        target.data('mousedown', false);
+        if (!target.data('mousemove')) {
+            // If event not handled by mouse move, treat it as click
+            zcy.gallery.events.click.call(target, [offset[0], offset[1]]);
+        } else {
+            // If event last handled by mouse move, treat it as scroll
+            var lastpos = target.data('lastpos');
+            var time = (new Date()).getTime();
+            var xspeed = (offset[0] - lastpos.position[0]) / (time - lastpos.time);
+            
+            zcy.gallery.events.scroll.call(target, xspeed);
+        }
+    });
+    zcy.add('gallery.mousemove', function(event) {
+        event.preventDefault();
+        var mouseevent = zcy.gallery.mouseevent(event);
+        var offset = mouseevent.position;
+        var target = mouseevent.target;
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Mouse Move: ' + offset[0] + ', ' + offset[1]);
+        
+        
+        // If mousedown, drag
+        if (target.data('mousedown')) {
+            zcy.gallery.events.drag.call(target, [offset[0], offset[1]]);
+            // Handled by mousemove
+            target.data('mousemove', true);
+        }
+    });
+    
+    zcy.add('gallery.touchstart', function(event) {
+        if (event.originalEvent.touches.length > 1) {
+            return;
+        }
+        event.preventDefault();
+        
+        var touchevent = zcy.gallery.mouseevent(event.originalEvent.touches[0]);
+        var offset = touchevent.position;
+        var target = touchevent.target;
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Touch Start: ' + offset[0] + ', ' + offset[1]);
+        
+        // If touchstart detected, stop all animation
+        zcy.gallery.events.stop.call(target);
+        // If no consequence touchmove occurs, the event is 'click'
+        target.data('timer', setTimeout(function() {
+            zcy.gallery.events.click.call(this, [offset[0], offset[1]]);
+        }, 200));
+        target.data('lastpos', {time: (new Date()).getTime(), position: [offset[0], offset[1]]});
+    });
+    zcy.add('gallery.touchmove', function(event) {
+        if (event.originalEvent.touches.length > 1) {
+            return;
+        }
+        event.preventDefault();
+        
+        var touchevent = zcy.gallery.mouseevent(event.originalEvent.touches[0]);
+        var offset = touchevent.position;
+        var target = touchevent.target;
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Touch Move: ' + offset[0] + ', ' + offset[1]);
+        
+        // Cancel the touchstart just now if exists, the event is now 'scroll'
+        try {
+            clearTimeout(target.data('timer'));
+        } catch(e) {}
+        
+        var lastpos = target.data('lastpos');
+        var time = (new Date()).getTime();
+        var xspeed = (offset[0] - lastpos.position[0]) / (time - lastpos.time);
+        zcy.gallery.events.drag.call(target, [offset[0], offset[1]]);
+        target.data('lastpos', {time: (new Date()).getTime(), position: [offset[0], offset[1]]});
+        
+        // Clear last scroll timeout
+        try {
+            clearTimeout(target.data('scrolltimeout'));
+        } catch(e) {}
+        target.data('scrolltimeout', setTimeout(function() {
+            zcy.gallery.events.scroll.call(target, xspeed);
+        }, 50));
+    });
+    zcy.add('gallery.touchend', function(event) {
+        if (event.originalEvent.touches.length > 1) {
+            return;
+        }
+        event.preventDefault();
+        
+        var touchevent = zcy.gallery.mouseevent(event.originalEvent.touches[0]);
+
+        $('div.mouse').css('left',Math.floor(offset[0])+'px').css('top', Math.floor(offset[1])+'px');
+        $('div.eventname').text('Touch End: ' + offset[0] + ', ' + offset[1]);
+        
+        // Touch end seems never get triggered
+        // So it's better to ignore this event
+    });
+    
+    // Extend events
+    zcy.add('gallery.events.scroll', function(speed) {
+        $('.eventspeed').text('Scroll speed: ' + speed);
+    });
+    zcy.add('gallery.events.click', function(position) {
+        $('.eventspeed').text('Click detected');
+    });
+    zcy.add('gallery.events.drag', function(offset) {
+        $('.eventspeed').text('Drag position: ' + offset);
+    });
+    zcy.add('gallery.events.stop', function() {
+        
+    });
+    
+    // Bind basic events to gallery
+    zcy.add('gallery.bind', function($gallery) {
+        // Window resize => trigger resize events
+        
+        // Mouse events => for PCs AND
+        // Touch events => for touch devices without mouse input
+        if ('ontouchend' in document) {
+            alert('Touch device detected.');
+            $gallery.bind('touchstart', zcy.gallery.touchstart);
+            $gallery.bind('touchmove', zcy.gallery.touchmove);
+            $gallery.bind('touchend', zcy.gallery.touchend);
+            
+            // Workaround android bug?
+            zcy.gallery.zoom(1.1);
+            zcy.gallery.zoom(1);
+
+        } else {
+            alert('Touch device NOT detected.');
+            $gallery.bind('mousedown', zcy.gallery.mousedown);
+            $gallery.bind('mousemove', zcy.gallery.mousemove);
+            $gallery.bind('mouseup', zcy.gallery.mouseup);
+        }
+        
+        // Call default function
+        // ^Windows resize
+    });
+    
+    $.each($('.zcy-gallery'), function() {
+        zcy.gallery.bind($(this));
+    });
+});
+
+
+</script>
+
 <br />
 Template Welcome
 <br />
