@@ -6,7 +6,6 @@
     <title><?php echo $title;?></title>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans" />
     <link rel="stylesheet" type="text/css" href="/static/css/zcy/dropdown.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/zcy/gallery.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
 
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.core.min.js"></script>
@@ -22,9 +21,6 @@
     <![endif]-->
 
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
-    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.customize.js"></script>
-    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.gallery.js"></script>
-    <script language="javascript" type="text/javascript" src="/static/js/pages/welcome.js"></script>
 
 </head>
 <body>
@@ -32,12 +28,12 @@
         <div class="zcy-title-wrapper">
             <div class="zcy-title-navbar">
                 <ul>
-                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="//tgifhacks.ntuoss.com/">TGIFHacks</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/lessons/">Lessons</a></li>
                     <li><a href="/people/">People</a></li>
-                    <li><a href="/sponsorship/">Sponsorship</a></li>
+                    <li class="active"><a href="/sponsorship/">Sponsorship</a></li>
                 </ul>
             </div>
             <p><span class="zcy-ntu">Nanyang Techonological University</span></p>
@@ -52,19 +48,12 @@
                 <span style="background-image: url('/static/image/navigation.png'); color: #fff;">Navigation</span>
                 </button>
                 <ul style="left: 0px; right: auto;" class="green">
-                    <li class="active" onmousedown="return false;">Home</li>
+                    <li onmousedown="return false;">Home</li>
                     <li onmousedown="return false;">TGIFHacks</li>
-                    <li onmousedown="return false;">Projects</li>
+                    <li class="active" onmousedown="return false;">Projects</li>
                     <li onmousedown="return false;">Lessons</li>
                     <li onmousedown="return false;">People</li>
                     <li onmousedown="return false;">Sponsorship</li>
-                </ul>
-            </div>
-            <div class="zcy-dropdown">
-                <button>
-                <span>Choose feed</span>
-                </button>
-                <ul class="feed-menu">
                 </ul>
             </div>
         </div>
@@ -78,7 +67,7 @@
     </div>
     <div>
         <p>Please wait while page loading</p>
-        <p>Template Welcome</p>
+        <p>Template Projects</p>
         <p>Current Time is <strong><?php echo $time;?></strong>.</p>
     </div>
 </body>

@@ -8,6 +8,8 @@ RewriteRule ^.*$ - [R=404,L]
 
 RewriteRule ^/?$ rpc.php?command=welcome [NC,NE]
 
+RewriteRule ^/?([a-z]{1,16})/?$ rpc.php?command=$1 [NC,L]
+
 RewriteRule ^/?([a-z]{1,16})/([a-z0-9\-]{1,64})/?$ rpc.php?command=$1&param=["$2"] [NC,L]
 
 RewriteRule ^/?([a-z]{1,16})/([a-z0-9\-]{1,64})/([a-z0-9\-]{1,64})/?$ rpc.php?command=$1&param=["$2","$3"] [NC,L]

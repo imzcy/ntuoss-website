@@ -14,7 +14,6 @@ define('MYSQL_DBNAME', 'ntuoss');
 /* ##### Don't Change Here If Not Have To ##### */
 
 // Define Constants
-$include_path = array();
 define('SITE_ROOT', rtrim(dirname(__FILE__), '/\\') . DIRECTORY_SEPARATOR);
 define('LIBRARY_ROOT', SITE_ROOT . 'library' . DIRECTORY_SEPARATOR);
 define('TEMPLATE_ROOT', SITE_ROOT . 'template' . DIRECTORY_SEPARATOR);

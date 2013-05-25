@@ -1,0 +1,13 @@
+.zcy-people-list {
+    margin: 0px;
+    padding: 0px 8px 8px 8px;
+}
+
+.zcy-people-item {
+    margin: 0px;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    border-radius: 4px;
+}
