@@ -26,6 +26,7 @@ function LoadObject($module, $params = NULL, $isclass = FALSE) {
     
     $package = $matches['package'];
     $name = $matches['name'];
+    $function = '_' . $name;
     
     $path = LIBRARY_ROOT . str_replace('.', DIRECTORY_SEPARATOR, $package) . $name . '.php';
     
@@ -39,12 +40,12 @@ function LoadObject($module, $params = NULL, $isclass = FALSE) {
     if ($isclass == TRUE) {
         // Load classes from file.
         // Must create return an object
-        return new $name($params);
+        return new $function($params);
     } else {
         // Load functions from file.
         // Functions are global by default
         // Load and execute
-        return $name($params);
+        return $function($params);
     }
     
 errorHandler:

@@ -1,5 +1,5 @@
 <?php
-function projects() {
+function _projects() {
 	$r = LoadObject('core.RenderTemplate', NULL, TRUE);
 	
 	// Define variables

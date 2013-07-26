@@ -1,6 +1,6 @@
 <?php
 
-function ContentType($params) {
+function _ContentType($params) {
 
     // From http://php.net/manual/en/function.header.php
     $contentType = $params[0];

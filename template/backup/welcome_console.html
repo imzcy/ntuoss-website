@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans|Ubuntu+Mono:400,700" />
+
+
+    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.core.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery-1.9.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery-ui-1.10.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery.animate-shadow-min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery.hashchange.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/shortcut.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/respond.min.js"></script>
+    <!--[if lt IE 9]>
+        <script language="javascript" type="text/javascript" src="/static/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script language="javascript" type="text/javascript" src="/static/js/pages/welcome.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        body {
+            background-color: #333;
+            color: #4e4;
+            font-family: 'Ubuntu Mono', Consolas;
+            font-size: 24px;
+            padding: 0px;
+            margin: 0px;
+            position: relative;
+            background-image: url('/static/image/dark-grey-tile.png');
+        }
+        
+        div.navbar {
+            height: 72px;
+            width: 100%;
+            position: relative;
+        }
+        div.navbar div.logo {
+            float: left;
+            padding: 8px;
+        }
+        div.navbar div.version {
+            float: right;
+        }
+        div.navbar div.quicklinks {
+            position: absolute;
+            bottom: 0px;
+            width: 600px;
+            right: 0px;
+            height: 24px;
+            text-align: right;
+        }
+        div.navbar div.quicklinks a {
+            text-decoration: none;
+            color: #0ff;
+        }
+        div.navbar div.quicklinks a:hover {
+            text-decoration: underline;
+            color: #0ff;
+        }
+        
+        div.container {
+            display: block;
+            width: 980px;
+            margin: 0px auto;
+            position: relative;
+        }
+        
+        div.console-wrapper {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            width: 100%;
+            margin-top: 72px;
+        }
+        div.console {
+            background-color: #111;
+            position: absolute;
+            top: 0px;
+            bottom: 36px;
+            width: 100%;
+            overflow-y: auto;
+        }
+        div.console-input-wrapper {
+            width: 100%;
+            height: 36px;
+            position: absolute;
+            bottom: 0px;
+            background-color: #666;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+        div.console-input-prompt {
+            width: 36px;
+            position: absolute;
+        }
+        div.console-input {
+            position: absolute;
+            height: 100%;
+            left: 36px;
+            right: 72px;
+            overflow: hidden;
+        }
+        div.console-input input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border: 0px;
+            font-size: 24px;
+            color: #eee;
+            font-family: 'Ubuntu Mono', Consolas;
+            background-color: #666;
+        }
+        div.console-input-enter {
+            width: 72px;
+            position: absolute;
+            right: 0px;
+        }
+        div.console-input-enter input {
+            display: block;
+            height: 36px;
+            width: 100%;
+            font-size: 24px;
+            font-family: 'Ubuntu Mono', Consolas;
+            background-color: #333;
+            border: 2px;
+            color: #ccc;
+        }
+        
+        .error {
+            color: #e44;
+        }
+        
+        .warning {
+            color: #ffcb00;
+        }
+        
+        p,a {
+            margin: 0px;
+            padding: 0px;
+            line-height: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container" style="height: 100%;">
+            <div class="logo">
+                <img src="/static/image/logo-raster.png" alg="NTUOSS Logo"/>
+            </div>
+            <div class="version">
+                ver 2013.06.27.01
+            </div>
+            <div class="quicklinks">
+                Quick commands: <a href="#whoarewe">WhoAreWe</a> <a href="#whatwedo">WhatWeDo</a>
+            </div>
+        </div>
+    </div>
+    <div class="console-wrapper">
+        <div class="container" style="height: 100%;">
+            <div class="console">
+                <div><a class="warning">Copyleft (ɔ) 2013 NTUOSS. All wrongs reserved.</a></div>
+                <div><a class="error">Warning: NTUOSS GUI is currently under development, use console instead.</a></div>
+            </div>
+            <div class="console-input-wrapper">
+                <div class="console-input-prompt">
+                    >>
+                </div>
+                <div class="console-input">
+                    <input type="text" value="whoarewe" class="console-input"/>
+                </div>
+                <div class="console-input-enter">
+                    <input type="button" class="console-input-enter" value="Enter" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <?php
 
 
-function gallery($params) {
+function _gallery($params) {
 
     LoadObject('core.utils.ContentType', array('json'));
     echo json_encode(array(

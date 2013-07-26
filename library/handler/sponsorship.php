@@ -1,5 +1,5 @@
 <?php
-function sponsorship() {
+function _sponsorship() {
 	$r = LoadObject('core.RenderTemplate', NULL, TRUE);
 	
 	// Define variables

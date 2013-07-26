@@ -10,54 +10,40 @@ html, body {
     width: 100%;
     height: 100%;
     font-family: 'Merriweather Sans';
-    overflow-x: hidden;
+    overflow: auto;
 }
 
-.zcy-title {
-    position: fixed;
-    padding: 0px;
-    margin: 0px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    height: 108px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: -1px;
-    background: #eeeeee; /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #eeeeee 0%, #f7f7f7 33%, #eeeeee 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#eeeeee), color-stop(33%,#f7f7f7), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg,  #eeeeee 0%,#f7f7f7 33%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg,  #eeeeee 0%,#f7f7f7 33%,#eeeeee 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg,  #eeeeee 0%,#f7f7f7 33%,#eeeeee 100%); /* IE10+ */
-    background: linear-gradient(135deg,  #eeeeee 0%,#f7f7f7 33%,#eeeeee 100%); /* W3C */
-    z-index: 1;
-}
-
-.zcy-title-wrapper {
+div.zcy-container {
     position: relative;
-    padding: 43px 8px 15px 8px;
-    margin: 0px;
+    width: 980px;
+    margin: 0px auto;
+    height: 100%;
 }
 
-.zcy-title-navbar {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+
+div.zcy-navbar {
+    position: fixed;
     width: 100%;
-    height: 28px;
+    background-color: #111;
     margin: 0px;
     padding: 0px;
-    background-color: #333;
+    line-height: 1.8;
+    min-width: 980px;
+    height: 32px;
+    z-index: 32;
+    -moz-box-shadow: 1px 1px 4px #666;
+    -webkit-box-shadow: 1px 1px 4px #666;
+    box-shadow: 1px 1px 4px #666;
 }
-.zcy-title-navbar ul {
+div.zcy-navbar ul {
     display: block;
     padding: 0px 8px;
     margin: 0px;
     position: relative;
-    height: 100%;
+    height: 32px;
     vertical-align: top;
 }
-.zcy-title-navbar ul li {
+div.zcy-navbar ul li {
     display: inline-block;
     *zoom: 1;
     *display: inline;
@@ -67,19 +53,20 @@ html, body {
     margin: 0px;
     vertical-align: top;
 }
-.zcy-title-navbar ul li.active {
-    border-bottom: 2px solid #1ba1e2;
+div.zcy-navbar ul li.active {
+    border-bottom: 3px solid #1ba1e2;
 }
-.zcy-title-navbar ul li.active a{
+div.zcy-navbarul li.active a{
     color: #1ba1e2 !important;
 }
-.zcy-title-navbar ul li:hover {
+div.zcy-navbar ul li:hover {
     background-color: #444;
 }
-.zcy-title-navbar ul li a {
+div.zcy-navbar ul li a {
     display: inline-block;
     *zoom: 1;
     *display: inline;
+    position: relative;
     text-decoration: none;
     color: #eee;
     font-family: 'Noto Sans';
@@ -87,137 +74,93 @@ html, body {
     vertical-align: bottom;
     padding-top: 4px;
 }
-.zcy-title-navbar ul li:hover a{
+div.zcy-navbar ul li:hover a{
     color: #e3c800;
 }
-
-.zcy-title h1 {
-    font-family: 'Julius Sans One', Arial;
-    font-size: 40px;
-    line-height: 1;
-    margin: 0px;
-    white-space:nowrap;
-    text-shadow: 2px 2px #ccc;
-}
-.zcy-title h1 .zcy-oss-open {
-    color: #ffca00;
-}
-.zcy-title h1 .zcy-oss-source {
-    color: #22b240;
-}
-.zcy-title h1 .zcy-oss-society {
-    color: #0088fe;
-}
-.zcy-title p {
-    font-family: Monda;
-    font-size: 16px;
-    line-height: 1;
-    margin: 0px;
-    margin-left: 4px;
-    color: #c50b2f;
-    white-space: nowrap;
-}
-.zcy-title-menu {
+div.zcy-navbar div.zcy-mailing {
     position: absolute;
-    bottom: 0px;
-    right: 240px;
-    padding: 0px;
-    margin: 0px;
-    height: 36px;
-}
-.zcy-title-logo {
-    position: absolute;
-    margin: 8px 16px 0px 8px;
-    top: 36px;
-    right: 8px;
-}
-.zcy-title div.zcy-navbar-hidden-button {
-    display: none;
-}
-
-.zcy-main {
-    position: fixed;
-    margin: 108px 240px 0px 0px;
+    *zoom: 1;
+    *display: inline;
+    right: 0px;
     top: 0px;
     bottom: 0px;
-    left: 0px;
-    right: 0px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-shadow: inset 1px 1px 2px #ccc;
-    -moz-box-shadow: inset 1px 1px 2px #ccc;
-    -webkit-box-shadow: inset 1px 1px 2px #ccc;
-    background-color: #eee;
-    padding-right: 16px;
+    background-color: #1ba1e2;
+    line-height: 1.8;
+    padding: 0px 8px;
+    font-size: 14px;
+    color: #eee;
+    margin: 4px;
+    border-radius: 2px;
 }
-
-.zcy-sidebar {
-    position: fixed;
+div.zcy-navbar div.zcy-mailing div.text {
+    bottom: 0px;
+}
+div.zcy-navbar div.zcy-mailing input.email {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    background-color: #fefefe;
+    border: 0px;
+    font-size: 14px;
     width: 240px;
+    font-family: consolas;
+    margin: 0px 4px;
+}
+div.zcy-navbar div.zcy-mailing input.submit {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    background-color: #333;
+    border: 1px solid #111;
+    color: #eee;
+    margin-left: 4px;
+}
+
+
+div.zcy-title {
+    position: relative;
+    height: 80px;
+    background-color: #eee;
+    margin: 32px 0px 0px 0px;
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+}
+div.zcy-title div.zcy-title-logo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 16px;
+}
+div.zcy-title div.zcy-title-text {
+    position: absolute;
+    left: 128px;
+    top: 16px;
+    line-height: 1;
+}
+div.zcy-title div.zcy-title-text p, div.zcy-title div.zcy-title-text h1 {
+    margin: 0px;
+}
+div.zcy-title div.zcy-title-social {
+    position: absolute;
     right: 0px;
     top: 0px;
     bottom: 0px;
-    background-color: #f8f8f8;
-    padding-top: 108px;
+    padding: 16px 32px;
+    border-left: 2px solid #666;
+    border-right: 2px solid #666;
+    background-color: #fefefe;
+}
+div.zcy-title div.zcy-title-social span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+.zcy-ntu {
+    color: #c60c30;
 }
 
-@media (max-width: 980px) {
 
-    html, body {
-        position: relative;
-    }
-
-    .zcy-title {
-        margin: 0px;
-        position: relative;
-    }
-    .zcy-title-menu {
-        right: 0px;
-        text-align: right;
-        margin-right: 16px;
-        height: 34px;
-    }
-    .zcy-title-logo {
-        display: none;
-    }
-    
-    .zcy-main {
-        position: relative;
-        margin: 0px;
-    }
-    
-    .zcy-sidebar {
-        position: relative;
-        width: auto;
-        height: 32px;
-        padding: 0px;
-    }
-}
-
-@media (max-width: 639px) {
-
-    .zcy-title-wrapper {
-        position: relative;
-        padding: 8px 4px;
-        margin: 0px;
-    }
-    .zcy-title-navbar {
-        display: none;
-    }
-    .zcy-title div.zcy-navbar-hidden-button {
-        display: inline-block;
-        *zoom: 1;
-        *display: inline;
-    }
-
-    .zcy-title {
-        height: 80px;
-    }
-    .zcy-title h1 {
-        font-size: 32px;
-    }
-
-    .zcy-title-menu {
-        height: 26px;
-    }
+div.zcy-body {
+    position: relative;
+    margin: 0px;
 }

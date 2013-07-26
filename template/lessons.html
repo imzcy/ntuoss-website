@@ -4,9 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 
     <title><?php echo $title;?></title>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans" />
-    <link rel="stylesheet" type="text/css" href="/static/css/zcy/dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans|Open+Sans" />
     <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/pages/default.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/zcy/zcy.dropdown.css" />
 
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.core.min.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery-1.9.1.min.js"></script>
@@ -24,51 +25,132 @@
 
 </head>
 <body>
-    <div class="zcy-title">
-        <div class="zcy-title-wrapper">
-            <div class="zcy-title-navbar">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="//tgifhacks.ntuoss.com/">TGIFHacks</a></li>
-                    <li><a href="/projects/">Projects</a></li>
-                    <li class="active"><a href="/lessons/">Lessons</a></li>
-                    <li><a href="/people/">People</a></li>
-                    <li><a href="/sponsorship/">Sponsorship</a></li>
-                </ul>
+    <div class="zcy-navbar">
+        <div class="zcy-container">
+            <ul class="zcy-inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="//tgifhacks.ntuoss.com/">TGIFHacks</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li class="active"><a href="/lessons/">Lessons</a></li>
+                <li><a href="/people/">People</a></li>
+                <li><a href="/sponsorship/">Sponsorship</a></li>
+            </ul>
+            <div class="zcy-mailing">
+                <div class="text">Join our mailing list: <input type="email" class="email" /><input type="button" class="submit" value="Join!" /></div>
             </div>
-            <p><span class="zcy-ntu">Nanyang Techonological University</span></p>
-            <h1><span class="zcy-oss-open">Open</span> <span class="zcy-oss-source">Source</span> <span class="zcy-oss-society">Society</span></h1>
+        </div>
+    </div>
+    <div class="zcy-title">
+        <div class="zcy-container">
             <div class="zcy-title-logo">
                 <a href="/"><img border="0" src="/static/image/logo.png" alt="NTUOSS" /></a>
             </div>
-        </div>
-        <div class="zcy-title-menu">
-            <div class="zcy-navbar-hidden-button zcy-dropdown green">
-                <button class="green">
-                <span style="background-image: url('/static/image/navigation.png'); color: #fff;">Navigation</span>
-                </button>
-                <ul style="left: 0px; right: auto;" class="green">
-                    <li onmousedown="return false;">Home</li>
-                    <li onmousedown="return false;">TGIFHacks</li>
-                    <li class="active" onmousedown="return false;">Projects</li>
-                    <li onmousedown="return false;">Lessons</li>
-                    <li onmousedown="return false;">People</li>
-                    <li onmousedown="return false;">Sponsorship</li>
-                </ul>
+            <div class="zcy-title-text">
+                <p><span class="zcy-ntu">Nanyang Technological University</span></p>
+                <h1><span class="zcy-oss-open">Open</span> <span class="zcy-oss-source">Source</span> <span class="zcy-oss-society">Society</span></h1>
+            </div>
+            <div class="zcy-title-social">
+                <span style="background-image: url('/static/image/github.png');"></span>
+                <span style="background-image: url('/static/image/facebook.png');"></span>
+                <span style="background-image: url('/static/image/twitter.png');"></span>
             </div>
         </div>
     </div>
-    <div class="zcy-sidebar">
-        <a href="//www.facebook.com/ntuoss/">Find us on Facebook</a>
-    </div>
-    <div class="zcy-main">
-        <div class="zcy-gallery-list">
+    <div class="zcy-body">
+        <div class="zcy-container">
+            <div style="position:relative;height:240px;background-color:#f6f6f6;margin:24px 0px;">
+                <div style="position:absolute;left:0px;width:240px;height:100%;">
+                    <div style="box-shadow:2px 2px 4px #666;width:90%;height:90%;left:5%;top:5%;position:absolute;background-color:#eee;">
+                        
+                    </div>
+                </div>
+                <div style="position:absolute;left:240px;width:580px;height:100%">
+                    <div style="margin: 16px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare, est pellentesque lobortis egestas, urna lectus interdum neque, adipiscing mattis nisl ligula nec arcu. Aliquam convallis vel nisi a mattis. Phasellus quam turpis, sollicitudin dapibus est quis, ornare elementum dolor. Aenean vehicula at massa et pharetra. Vestibulum at tellus elit. Donec sed eros sollicitudin, pretium lorem at, egestas libero. Integer semper tortor vel sapien sagittis commodo. Curabitur pulvinar accumsan dapibus. Maecenas eget velit ut mi porttitor malesuada et eu orci. Integer at leo ultrices, egestas tortor eu, tincidunt ante. Aliquam erat volutpat. Donec non convallis est. Integer non metus mi. 
+                    </div>
+                </div>
+                <div style="position:absolute;right:0px;width:160px;height:100%">
+                    <div style="margin:24px 0px;text-align:center;">
+                        <div class="zcy-dropdown">
+                            <button><span style="font-family:Arial;">Downloads</span></button>
+                            <ul>
+                                <li>Handout</li>
+                                <li>Material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position:relative;height:240px;background-color:#f6f6f6;margin:24px 0px;">
+                <div style="position:absolute;left:0px;width:240px;height:100%;">
+                    <div style="box-shadow:2px 2px 4px #666;width:90%;height:90%;left:5%;top:5%;position:absolute;background-color:#eee;">
+                        
+                    </div>
+                </div>
+                <div style="position:absolute;left:240px;width:580px;height:100%">
+                    <div style="margin: 16px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare, est pellentesque lobortis egestas, urna lectus interdum neque, adipiscing mattis nisl ligula nec arcu. Aliquam convallis vel nisi a mattis. Phasellus quam turpis, sollicitudin dapibus est quis, ornare elementum dolor. Aenean vehicula at massa et pharetra. Vestibulum at tellus elit. Donec sed eros sollicitudin, pretium lorem at, egestas libero. Integer semper tortor vel sapien sagittis commodo. Curabitur pulvinar accumsan dapibus. Maecenas eget velit ut mi porttitor malesuada et eu orci. Integer at leo ultrices, egestas tortor eu, tincidunt ante. Aliquam erat volutpat. Donec non convallis est. Integer non metus mi. 
+                    </div>
+                </div>
+                <div style="position:absolute;right:0px;width:160px;height:100%">
+                    <div style="margin:24px 0px;text-align:center;">
+                        <div class="zcy-dropdown">
+                            <button><span style="font-family:Arial;">Downloads</span></button>
+                            <ul>
+                                <li>Handout</li>
+                                <li>Material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position:relative;height:240px;background-color:#f6f6f6;margin:24px 0px;">
+                <div style="position:absolute;left:0px;width:240px;height:100%;">
+                    <div style="box-shadow:2px 2px 4px #666;width:90%;height:90%;left:5%;top:5%;position:absolute;background-color:#eee;">
+                        
+                    </div>
+                </div>
+                <div style="position:absolute;left:240px;width:580px;height:100%">
+                    <div style="margin: 16px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare, est pellentesque lobortis egestas, urna lectus interdum neque, adipiscing mattis nisl ligula nec arcu. Aliquam convallis vel nisi a mattis. Phasellus quam turpis, sollicitudin dapibus est quis, ornare elementum dolor. Aenean vehicula at massa et pharetra. Vestibulum at tellus elit. Donec sed eros sollicitudin, pretium lorem at, egestas libero. Integer semper tortor vel sapien sagittis commodo. Curabitur pulvinar accumsan dapibus. Maecenas eget velit ut mi porttitor malesuada et eu orci. Integer at leo ultrices, egestas tortor eu, tincidunt ante. Aliquam erat volutpat. Donec non convallis est. Integer non metus mi. 
+                    </div>
+                </div>
+                <div style="position:absolute;right:0px;width:160px;height:100%">
+                    <div style="margin:24px 0px;text-align:center;">
+                        <div class="zcy-dropdown">
+                            <button><span style="font-family:Arial;">Downloads</span></button>
+                            <ul>
+                                <li>Handout</li>
+                                <li>Material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position:relative;height:240px;background-color:#f6f6f6;margin:24px 0px;">
+                <div style="position:absolute;left:0px;width:240px;height:100%;">
+                    <div style="box-shadow:2px 2px 4px #666;width:90%;height:90%;left:5%;top:5%;position:absolute;background-color:#eee;">
+                        
+                    </div>
+                </div>
+                <div style="position:absolute;left:240px;width:580px;height:100%">
+                    <div style="margin: 16px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare, est pellentesque lobortis egestas, urna lectus interdum neque, adipiscing mattis nisl ligula nec arcu. Aliquam convallis vel nisi a mattis. Phasellus quam turpis, sollicitudin dapibus est quis, ornare elementum dolor. Aenean vehicula at massa et pharetra. Vestibulum at tellus elit. Donec sed eros sollicitudin, pretium lorem at, egestas libero. Integer semper tortor vel sapien sagittis commodo. Curabitur pulvinar accumsan dapibus. Maecenas eget velit ut mi porttitor malesuada et eu orci. Integer at leo ultrices, egestas tortor eu, tincidunt ante. Aliquam erat volutpat. Donec non convallis est. Integer non metus mi. 
+                    </div>
+                </div>
+                <div style="position:absolute;right:0px;width:160px;height:100%">
+                    <div style="margin:24px 0px;text-align:center;">
+                        <div class="zcy-dropdown">
+                            <button><span style="font-family:Arial;">Downloads</span></button>
+                            <ul>
+                                <li>Handout</li>
+                                <li>Material</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div>
-        <p>Please wait while page loading</p>
-        <p>Template Projects</p>
-        <p>Current Time is <strong><?php echo $time;?></strong>.</p>
     </div>
 </body>
 </html>

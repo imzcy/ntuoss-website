@@ -1,0 +1,16 @@
+div.zcy-gallery {
+    padding: 12px;
+}
+
+div.zcy-intro {
+    border-left: 3px solid #1ba1e2;
+    padding-left: 12px;
+}
+div.zcy-intro-title {
+    font-size: 32px;
+    font-family: "Open Sans", arial, sans-serif;
+}
+div.zcy-intro-content {
+    font-size: 16px;
+    font-family: "Open Sans", arial, sans-serif;
+}

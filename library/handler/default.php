@@ -1,5 +1,5 @@
 <?php
-function welcome() {
+function _default() {
 	$r = LoadObject('core.RenderTemplate', NULL, TRUE);
 	
 	// Define variables
@@ -7,6 +7,6 @@ function welcome() {
 	$r->bind('title', 'Welcome Page');
 	
 	// Render
-	$r->render('welcome');
+	$r->render('default');
 }
 ?>

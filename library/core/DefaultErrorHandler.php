@@ -13,7 +13,7 @@ function __DefaultErrorHandler($errno, $errstr, $errfile, $errline) {
 set_error_handler('__DefaultErrorhandler', E_ALL);
 
 // Dummy Function for Loader
-function DefaultErrorHandler() {
+function _DefaultErrorHandler() {
 
 }
 

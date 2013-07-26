@@ -1,5 +1,5 @@
 <?php
-function people() {
+function _people() {
 	$r = LoadObject('core.RenderTemplate', NULL, TRUE);
 	
 	// Define variables

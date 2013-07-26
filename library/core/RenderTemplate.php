@@ -1,6 +1,6 @@
 <?php
 
-class RenderTemplate {
+class _RenderTemplate {
 
 	private $var;
 	

@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 
     <title><?php echo $title;?></title>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans" />
-    <link rel="stylesheet" type="text/css" href="/static/css/zcy/dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans|Open+Sans" />
     <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/pages/default.css" />
 
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.core.min.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery-1.9.1.min.js"></script>
@@ -16,59 +16,47 @@
     <script language="javascript" type="text/javascript" src="/static/js/jquery/jquery.hashchange.min.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/shortcut.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/respond.min.js"></script>
+
+    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
     <!--[if lt IE 9]>
         <script language="javascript" type="text/javascript" src="/static/js/html5shiv.js"></script>
     <![endif]-->
 
-    <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
-
 </head>
 <body>
-    <div class="zcy-title">
-        <div class="zcy-title-wrapper">
-            <div class="zcy-title-navbar">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="//tgifhacks.ntuoss.com/">TGIFHacks</a></li>
-                    <li><a href="/projects/">Projects</a></li>
-                    <li><a href="/lessons/">Lessons</a></li>
-                    <li><a href="/people/">People</a></li>
-                    <li class="active"><a href="/sponsorship/">Sponsorship</a></li>
-                </ul>
+    <div class="zcy-navbar">
+        <div class="zcy-container">
+            <ul class="zcy-inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="//tgifhacks.ntuoss.com/">TGIFHacks</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/lessons/">Lessons</a></li>
+                <li><a href="/people/">People</a></li>
+                <li class="active"><a href="/sponsorship/">Sponsorship</a></li>
+            </ul>
+            <div class="zcy-mailing">
+                <div class="text">Join our mailing list: <input type="email" class="email" /><input type="button" class="submit" value="Join!" onclick="zcy.alert('Feature under development.');" /></div>
             </div>
-            <p><span class="zcy-ntu">Nanyang Techonological University</span></p>
-            <h1><span class="zcy-oss-open">Open</span> <span class="zcy-oss-source">Source</span> <span class="zcy-oss-society">Society</span></h1>
+        </div>
+    </div>
+    <div class="zcy-title">
+        <div class="zcy-container">
             <div class="zcy-title-logo">
                 <a href="/"><img border="0" src="/static/image/logo.png" alt="NTUOSS" /></a>
             </div>
-        </div>
-        <div class="zcy-title-menu">
-            <div class="zcy-navbar-hidden-button zcy-dropdown green">
-                <button class="green">
-                <span style="background-image: url('/static/image/navigation.png'); color: #fff;">Navigation</span>
-                </button>
-                <ul style="left: 0px; right: auto;" class="green">
-                    <li onmousedown="return false;">Home</li>
-                    <li onmousedown="return false;">TGIFHacks</li>
-                    <li class="active" onmousedown="return false;">Projects</li>
-                    <li onmousedown="return false;">Lessons</li>
-                    <li onmousedown="return false;">People</li>
-                    <li onmousedown="return false;">Sponsorship</li>
-                </ul>
+            <div class="zcy-title-text">
+                <p><span class="zcy-ntu">Nanyang Technological University</span></p>
+                <h1><span class="zcy-oss-open">Open</span> <span class="zcy-oss-source">Source</span> <span class="zcy-oss-society">Society</span></h1>
+            </div>
+            <div class="zcy-title-social">
+                <span style="background-image: url('/static/image/github.png');"></span>
+                <span style="background-image: url('/static/image/facebook.png');"></span>
+                <span style="background-image: url('/static/image/twitter.png');"></span>
             </div>
         </div>
     </div>
-    <div class="zcy-sidebar">
-        <a href="//www.facebook.com/ntuoss/">Find us on Facebook</a>
-    </div>
-    <div class="zcy-main">
-        <div class="zcy-gallery-list">
-        </div>
-    </div>
-    <div>
-        <p>Please wait while page loading</p>
-        <p>Template Projects</p>
-        <p>Current Time is <strong><?php echo $time;?></strong>.</p>
+    <div class="zcy-body">
     </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-function lessons() {
+function _lessons() {
 	$r = LoadObject('core.RenderTemplate', NULL, TRUE);
 	
 	// Define variables
