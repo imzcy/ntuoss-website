@@ -1,1 +1,3 @@
 backups/*
+/nbproject/*
+/bootstrap.php
