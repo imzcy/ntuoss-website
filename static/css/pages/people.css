@@ -11,3 +11,13 @@
     background-color: #fefefe;
     border-radius: 4px;
 }
+.zdy-member-item {
+    margin: 4px;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    border-radius: 4px;
+    float: left;
+    width: 280px;
+}

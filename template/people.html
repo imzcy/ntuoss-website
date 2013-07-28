@@ -57,25 +57,33 @@
     </div>
     <div class="zcy-body">
         <div class="zcy-container">
+            <h4>
+                These are the guys who get things done and keep them running while also ensuring that the hackers never go hungry. 
+            </h4>
             <h3>Management committee</h3>
             <div class="zcy-people-list">
             <hr />
-                <div class="zcy-people-item">
-                    <p>President</p>
-                    
-                </div>
-                <div class="zcy-people-item">
-                    <p>Vice President</p>
-                    
-                </div>
+                <?php
+                    foreach($management_array as $k => $v){
+                    echo '
+                    <div class="zcy-people-item">
+                        <p>'.$k.'</p>
+                        <p>'.$v.'</p>
+                    </div>';
+                    }
+                ?>
             </div>
             <h3>Members</h3>
             <div class="zcy-people-list">
             <hr />
-                <div class="zcy-people-item">
-                    <p>Harry</p>
-                    
-                </div>
+                <?php
+                    foreach($member_array as $k => $v){
+                    echo '
+                    <div class="zdy-member-item">
+                        <p>'.$v.'</p>
+                    </div>';
+                    }
+                ?>
             </div>
         </div>
     </div>
