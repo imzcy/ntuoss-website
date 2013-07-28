@@ -10,10 +10,17 @@ div.sponsorship{
     color: #999;
 }
 
+
 .block {
     display: block;
     background: #2a2a2a;
     position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; min-height: 0px;
+}
+.span8 h3{
+    font-size: 50px;
+}
+.span8 p{
+    font-size: 25px;
 }
 .text-only{
     padding: 20px;
@@ -22,6 +29,31 @@ div.sponsorship{
     position: relative;
     height: 300px;
 }
+.block-wrap-large{
+    position: relative;
+    height: 600px;
+}
+/* block-sponsor */
+.block-sponsor span{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    line-height: 100%;
+    background: rgba(0,0,0,0.2); /* opacity */
+    filter: none;
+    position: absolute;
+}
+.block-sponsor span a {
+    color: #fff;
+}
+/* END of block-sponsor */
+a {
+    color: #f66;
+    text-decoration: none;
+}
+
 span.em {
     font-style: normal;
     color: #1ba1e2;
