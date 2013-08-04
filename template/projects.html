@@ -6,7 +6,6 @@
     <title><?php echo $title;?></title>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monda|Julius+Sans+One|Merriweather+Sans|Noto+Sans|Open+Sans" />
     <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/pages/default.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/zcy/zcy.dropdown.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/zcy/zcy.flexiblesort.css" />
 
@@ -22,6 +21,7 @@
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.notification.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.dropdown.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/zcy/zcy.flexiblesort.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/pages/projects.js"></script>
     <!--[if lt IE 9]>
         <script language="javascript" type="text/javascript" src="/static/js/html5shiv.js"></script>
     <![endif]-->
@@ -61,59 +61,34 @@
     </div>
     <div class="zcy-body">
         <div class="zcy-container">
-            <div class="zcy-options" style="padding:8px 32px;margin:8px;border-bottom:1px solid #ccc;">
+            <div class="zcy-options" style="padding:8px 32px;margin:8px;border-bottom:1px solid #ccc;line-height:1.2;">
                 <span class="zcy-option">
-                    Sort by 
                     <div class="zcy-dropdown">
-                        <button><a>latest first (default)</a></button>
-                        <ul style="left:0px;right:auto;">
-                            <li>latest first (default)</li>
-                            <li>most votes first</li>
-                            <li>most viewed first</li>
-                            <li>random</li>
-                        </ul>
+                        <span>Sort by </span>
+                        <div class="zcy-dropdown-wrapper">
+                            <a>
+                                <span class="sort-by-label">latest first (default)</span>
+                            </a>
+                            <div class="zcy-dropdown-ul-wrapper">
+                                <ul>
+                                    <li onclick="zcy.extend.sortBy.call(this, 'latest');">latest first (default)</li>
+                                    <li onclick="zcy.extend.sortBy.call(this, 'votes');">most votes first</li>
+                                    <li onclick="zcy.extend.sortBy.call(this, 'views');">most views first</li>
+                                    <li onclick="zcy.extend.sortBy.call(this, 'random');">random</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </span>
-                <span class="zcy-option" style="margin:0px 48px;float:right;">
-                    <button><a>Refresh</a></button>
-                </span>
             </div>
-            <div class="zcy-listview">
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;box-shadow:0px 0px 6px #333;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
+            <div class="zcy-gridview">
+                <div class="zcy-gridview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;box-shadow:0px 0px 6px #333;">
+                    <div class="zcy-gridview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
+                    <div class="zcy-gridview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
                 </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
-                </div>
-                <div class="zcy-listview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
-                    <div class="zcy-listview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
-                    <div class="zcy-listview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
+                <div class="zcy-gridview-element" style="position:relative;display:inline-block;*display:inline;height:240px;width:180px;background-color:#eee;margin:24px;">
+                    <div class="zcy-gridview-element-preview" style="position:absolute;width:100%;height:100%;"></div>
+                    <div class="zcy-gridview-element-description" style="position:absolute;opacity:0.8;left:-5%;width: 110%;bottom:15%;padding:5px 0px;color:#eee;box-shadow:2px 2px 4px #666;text-align:center;overflow:hidden;background-color:#333;">Description lorem ipsum zcy</div>
                 </div>
             </div>
         </div>
