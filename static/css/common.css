@@ -150,6 +150,11 @@ div.zcy-title div.zcy-title-social {
     border-right: 2px solid #666;
     background-color: #fefefe;
 }
+div.zcy-title div.zcy-title-social a.zcy-title-social-href {
+    display:inline-block;
+    *display:inline;
+    text-decoration:none;
+}
 div.zcy-title div.zcy-title-social span {
     display: inline-block;
     width: 32px;
