@@ -46,7 +46,7 @@
                 <li><a href="/sponsorship/">Sponsorship</a></li>
             </ul>
             <div class="zcy-mailing">
-                <div class="text">Join our mailing list: <input type="email" class="email" /><input type="button" class="submit" value="Join!" onclick="zcy.alert('Feature not available yet.');" /></div>
+                <div class="text">Join our mailing list: <input type="email" class="email" id="mailinglist" /><input type="button" class="submit" value="Join!" id="submitmailinglist" /></div>
             </div>
         </div>
     </div>
@@ -104,12 +104,25 @@
             </div>
         </div>
         <div class="zcy-footer" style="border-top: 1px solid #ccc; background-color: #eee; text-align: center; padding: 12px; margin-top: 24px; font-size: 14px; color: #666;">
-            Copyleft (&#390;) 2013 NTUOSS. All wrongs reserved.
+            Copyleft (&#390;) 2013 NTUOSS. Write to us: hackers@ntuoss.com</a>. 
         </div>
     </div>
     <script type="text/javascript">
         $(window).load(function() {
             $('#slider').nivoSlider({"pauseTime": 4000});
+        });
+    </script>
+    <script type="text/javascript">
+        $('#submitmailinglist').bind('click', function() {
+            zcy.alert('Processing...');
+            $.post('/mailinglist', {'email': $('#mailinglist').val()}, function(data) {
+                var d = JSON.parse(data);
+                if (d && (d.status == 0)) {
+                    zcy.alert('You have been added to mailing list successfully! (Transaction: ' + d.transactioncode + ')');
+                } else {
+                    zcy.alert('An error occured while adding you to mailing list.');
+                }
+            });
         });
     </script>
 </body>

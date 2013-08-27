@@ -35,7 +35,7 @@
                 <li><a href="/sponsorship/">Sponsorship</a></li>
             </ul>
             <div class="zcy-mailing">
-                <div class="text">Join our mailing list: <input type="email" class="email" /><input type="button" class="submit" value="Join!" /></div>
+                <div class="text">Join our mailing list: <input type="email" class="email" id="mailinglist" /><input type="button" class="submit" value="Join!" id="submitmailinglist" /></div>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
     </div>
     <div class="zcy-body">
         <div class="zcy-container">
-            <h4>
+            <!-- h4>
                 These are the guys who get things done and keep them running while also ensuring that the hackers never go hungry. 
             </h4>
             <h3>Management committee</h3>
@@ -84,8 +84,23 @@
                     </div>';
                     }
                 ?>
-            </div>
+            </div -->
+            <h2>Join us and see your name here!</h2>
+            <h4>Name list will be available after ECA Fair.</h4>
         </div>
     </div>
+    <script type="text/javascript">
+        $('#submitmailinglist').bind('click', function() {
+            zcy.alert('Processing...');
+            $.post('/mailinglist', {'email': $('#mailinglist').val()}, function(data) {
+                var d = JSON.parse(data);
+                if (d && (d.status == 0)) {
+                    zcy.alert('You have been added to mailing list successfully! (Transaction: ' + d.transactioncode + ')');
+                } else {
+                    zcy.alert('An error occured while adding you to mailing list.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
